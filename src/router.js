@@ -1,5 +1,5 @@
 import { error404 } from "./views/404";
-import { renderDashboardA } from "./views/dashboardA";
+import { createEVents, renderDashboardA,} from "./views/dashboardA";
 import { renderHome } from "./views/home";
 import { loginValidation, renderLogin } from "./views/login";
 import { renderRegister } from "./views/register";
@@ -18,6 +18,9 @@ function render(path) {
 
     if (path==="/login") {
         loginValidation()
+    }
+    if (path==="/dashboardA") {
+        createEVents()
     }
     
 }

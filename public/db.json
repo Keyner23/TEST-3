@@ -1,22 +1,23 @@
 {
-    "roles": [
-        {
-            "id": "1",
-            "name": "custommer"
-        },
-        {
-            "id": "2",
-            "name": "admin"
-        }
-    ],
-    "users": [
-        {
-            "id": "8ac3",
-            "name": "Keyner",
-            "email": "keyner@gmail.com",
-            "password": "1234",
-            "roleId": "2"
-        }
-    ],
-    "events": []
+  "roles": [
+    {
+      "id": "1",
+      "name": "custommer"
+    },
+    {
+      "id": "2",
+      "name": "admin"
+    }
+  ],
+  "users": [
+    {
+      "id": "8ac3",
+      "name": "Keyner",
+      "email": "keyner@gmail.com",
+      "password": "1234",
+      "roleId": "2"
+    }
+  ],
+  "events": [
+  ]
 }
