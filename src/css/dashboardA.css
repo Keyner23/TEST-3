@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+* {
+    font-family: "Zen Dots", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+header {
+    background-color: #2de77b9d;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 10vh;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+header button {
+    background-color: red;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    gap: 70px;
+    padding: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 80vh;
+}
+
+#task-list {
+    background-color: #2de77b4e;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80vh;
+    height: 620px;
+    box-shadow: 0 4px 8px rgba(140, 73, 73, 0.2);
+    
+}
+
+.task-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.task-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.task-form input,
+select {
+    padding: 10px;
+    border: 2px solid #bbb;
+    border-radius: 8px;
+    height: 50px;
+}
+
+.task-form button {
+    background-color: #2de77bbd;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.task-form button:hover {
+    background-color: #2de77b;
+}
+
+/* .task-list {
+    background-color: #2de77b8e;
+    width: 400px;
+    padding: 20px;
+    border-radius: 12px;
+} */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #eee;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #555;
+    height: 5vh;
+}
+
+footer a {
+    text-decoration: none;
+    color: #4caf50;
+}
+
+#request {
+    height: 100px;
+}
+
+.task-item {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 40vh;
+    margin-bottom: 20px;
+}
