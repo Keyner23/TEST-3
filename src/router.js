@@ -1,14 +1,16 @@
 import { error404 } from "./views/404";
 import { createEVents, renderDashboardA,} from "./views/dashboardA";
+import { renderDashboardC } from "./views/dashboardC";
 import { renderHome } from "./views/home";
 import { loginValidation, renderLogin } from "./views/login";
-import { renderRegister } from "./views/register";
+import { register, renderRegister } from "./views/register";
 
 const routes = {
     "/":renderHome(),
     "/login":renderLogin(),
     "/register": renderRegister(),
-    "/dashboardA":renderDashboardA()
+    "/dashboardA":renderDashboardA(),
+    "/dashboardC":renderDashboardC()
 }
 
 function render(path) {
@@ -22,7 +24,9 @@ function render(path) {
     if (path==="/dashboardA") {
         createEVents()
     }
-    
+    if (path==="/register") {
+        register()
+    }
 }
 
 export function router() {

@@ -1,3 +1,4 @@
+
 export function renderDashboardA() {
     return `
     <head>
@@ -21,7 +22,8 @@ export function renderDashboardA() {
                     <input type="text" id="location" />
                     <label>Disponibilidad de personas</label>
                     <input type="number" id="people" />
-                    <button id="btn-submit" type="submit">Matricular Materia</button>
+                    <button id="btn-submit" type="submit">Crear evento</button>
+                    <button id="btn-event" type="submit">Ver eventos</button>
                 </form>
             </section>
 
@@ -47,13 +49,19 @@ export function createEVents() {
     const $day = document.getElementById("dayE")
     const $location = document.getElementById("location")
     const $people = document.getElementById("people")
+    const $btnEvent = document.getElementById("btn-event")
+    const $delete = document.getElementById("btn-delete")
     const urlApi = "http://localhost:3000/events"
 
     $btnSubmit.addEventListener("click", function (event) {
         event.preventDefault()
         newEvents()
-        renderEvent()
         clearInputs()
+    })
+
+    $btnEvent.addEventListener("click", function (event) {
+        event.preventDefault()
+        getEvents()
     })
     async function newEvents() {
         const newEvent = {
@@ -76,25 +84,37 @@ export function createEVents() {
     }
     function renderEvent(events) {
         const $taskList = document.getElementById("task-list")
+
         const eventElement = document.createElement("div")
         eventElement.classList.add("task-item")
         eventElement.innerHTML = `
-            <h3>${events.name.toUpperCase()}</h3>
+            <h3>${events.name}</h3>
             <p><strong>Dia del evento:</strong> ${events.day}</p>
             <p><strong>Lugar:</strong> ${events.location}</p>
             <p><strong>Cupos:</strong> ${events.people}</p>
+            <br>
+            <button id="btn-delete">Eliminar</button>
             <hr>
         `
         $taskList.appendChild(eventElement)
     }
+
     function clearInputs() {
         $name.value = ""
         $day.value = ""
         $location.value = ""
         $people.value = ""
     }
+
+    async function getEvents() {
+        try {
+            const eventElement = document.createElement("div")
+            let response = await fetch(urlApi)
+            let data = await response.json()
+            console.log(data)
+        } catch (error) {
+            console.log("error aqui")
+        }
+    }
 }
-
-
-
 

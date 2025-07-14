@@ -1,4 +1,5 @@
-import { errorLogin } from "../js/alerts";
+import { alertU } from "../js/alerts";
+
 
 
 export function renderLogin() {
@@ -43,10 +44,10 @@ export function loginValidation() {
                 if (data[0].roleId === "2") {
                     window.location.href = "/dashboardA";
                 } else if (data[0].roleId === "1") {
-                    window.location.href = "./dashboardC";
+                    window.location.href = "/dashboardC";
                 }
             } else {
-                errorLogin()
+                alertU("se equivoco en un campo")
             }
         } catch (error) {
             console.error("Error al iniciar sesión", error);

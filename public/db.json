@@ -19,5 +19,12 @@
     }
   ],
   "events": [
+    {
+      "id": "aa31",
+      "name": "mundial de futbol",
+      "day": "febrero",
+      "location": "maracana",
+      "people": "222"
+    }
   ]
 }

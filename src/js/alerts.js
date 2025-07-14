@@ -14,9 +14,9 @@ const Toast = Swal.mixin({
     }
 });
 
-export function errorLogin() {
+export function alertU(menssage) {
     Toast.fire({
         icon: "error",
-        title: "Has ingresado un valor mal"
+        title: menssage
     });
 }
