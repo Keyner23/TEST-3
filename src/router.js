@@ -1,16 +1,17 @@
+
 import { error404 } from "./views/404";
-import { createEVents, renderDashboardA,} from "./views/dashboardA";
-import { renderDashboardC } from "./views/dashboardC";
+import { createEVents, renderDashboardA, } from "./views/dashboardA";
+import { renderDashboardC, showEvents } from "./views/dashboardC";
 import { renderHome } from "./views/home";
 import { loginValidation, renderLogin } from "./views/login";
 import { register, renderRegister } from "./views/register";
 
 const routes = {
-    "/":renderHome(),
-    "/login":renderLogin(),
+    "/": renderHome(),
+    "/login": renderLogin(),
     "/register": renderRegister(),
-    "/dashboardA":renderDashboardA(),
-    "/dashboardC":renderDashboardC()
+    "/dashboardA": renderDashboardA(),
+    "/dashboardC": renderDashboardC()
 }
 
 function render(path) {
@@ -18,14 +19,17 @@ function render(path) {
     const route = routes[path] || error404();
     view.innerHTML = route;
 
-    if (path==="/login") {
+    if (path === "/login") {
         loginValidation()
     }
-    if (path==="/dashboardA") {
+    if (path === "/dashboardA") {
         createEVents()
     }
-    if (path==="/register") {
+    if (path === "/register") {
         register()
+    }
+    if (path === "/dashboardC") {
+        showEvents()
     }
 }
 
@@ -40,4 +44,6 @@ export function router() {
     });
     render(location.pathname);
 }
+
+
 

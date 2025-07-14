@@ -1,3 +1,4 @@
+import { checkSessionFourAuth } from "../js/validation"
 
 export function renderDashboardA() {
     return `
@@ -7,7 +8,7 @@ export function renderDashboardA() {
     <body>
         <header>
             <h1 id="header">Bienvenido Admin al administrador de eventos</h1>
-            <a id="logoutBtn" href="/" data-link ><button>Cerrar sesión</button></a>
+            <a id="logout-btn" href="/" data-link ><button>Cerrar sesión</button></a>
         </header>
 
         <main>
@@ -40,8 +41,6 @@ export function renderDashboardA() {
 
 
 
-
-
 export function createEVents() {
 
     const $btnSubmit = document.getElementById("btn-submit")
@@ -52,7 +51,12 @@ export function createEVents() {
     const $btnEvent = document.getElementById("btn-event")
     const $delete = document.getElementById("btn-delete")
     const urlApi = "http://localhost:3000/events"
+    const $btnExit = document.getElementById("logout-btn")
 
+    $btnExit.addEventListener("click", function () {
+        localStorage.removeItem("currentUser")
+        window.location.href = '/'
+    })
     $btnSubmit.addEventListener("click", function (event) {
         event.preventDefault()
         newEvents()
@@ -63,6 +67,7 @@ export function createEVents() {
         event.preventDefault()
         getEvents()
     })
+
     async function newEvents() {
         const newEvent = {
             name: $name.value,
@@ -92,8 +97,6 @@ export function createEVents() {
             <p><strong>Dia del evento:</strong> ${events.day}</p>
             <p><strong>Lugar:</strong> ${events.location}</p>
             <p><strong>Cupos:</strong> ${events.people}</p>
-            <br>
-            <button id="btn-delete">Eliminar</button>
             <hr>
         `
         $taskList.appendChild(eventElement)
@@ -108,12 +111,15 @@ export function createEVents() {
 
     async function getEvents() {
         try {
-            const eventElement = document.createElement("div")
-            let response = await fetch(urlApi)
-            let data = await response.json()
-            console.log(data)
+            const response = await fetch(urlApi)
+            const data = await response.json()
+            // console.log(data)
+
+            const $taskList = document.getElementById("task-list")
+            $taskList.innerHTML = ""
+            data.forEach(event => renderEvent(event))
         } catch (error) {
-            console.log("error aqui")
+            console.error("Error al obtener eventos:", error)
         }
     }
 }

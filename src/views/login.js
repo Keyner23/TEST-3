@@ -1,4 +1,5 @@
 import { alertU } from "../js/alerts";
+import { checkSessionFourAuth } from "../js/validation";
 
 
 
@@ -37,7 +38,9 @@ export function loginValidation() {
             const response = await fetch(`${urlApi}?email=${$email.value}`);
             const data = await response.json();
 
-            if (data.length !== 1) return errorUser();
+            if (data.length !== 1) {
+                alertU("El ususario no existe")
+            };
 
             if (data[0].password === $password.value) {
                 localStorage.setItem("currentUser", JSON.stringify(data[0]));
@@ -47,7 +50,7 @@ export function loginValidation() {
                     window.location.href = "/dashboardC";
                 }
             } else {
-                alertU("se equivoco en un campo")
+                alertU("Contraseña invalida")
             }
         } catch (error) {
             console.error("Error al iniciar sesión", error);
