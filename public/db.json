@@ -16,13 +16,6 @@
       "email": "keyner@gmail.com",
       "password": "1234",
       "roleId": "2"
-    },
-    {
-      "id": "4698",
-      "name": "juan",
-      "email": "juan@gmail.com",
-      "password": "2328",
-      "roleId": "1"
     }
   ],
   "events": [

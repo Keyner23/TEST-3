@@ -2,6 +2,7 @@ export function renderDashboardC() {
     return `
     <head>
     <link rel="stylesheet" href="./src/css/dashboardA.css">
+    <title>Dashboard Cliente</title>
     </head>
     <body>
         <header>

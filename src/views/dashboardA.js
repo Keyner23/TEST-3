@@ -4,6 +4,7 @@ export function renderDashboardA() {
     return `
     <head>
     <link rel="stylesheet" href="./src/css/dashboardA.css">
+    <title>Dashboard admin</title>
     </head>
     <body>
         <header>
