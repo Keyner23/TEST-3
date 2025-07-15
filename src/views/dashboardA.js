@@ -97,6 +97,8 @@ export function createEVents() {
             <p><strong>Dia del evento:</strong> ${events.day}</p>
             <p><strong>Lugar:</strong> ${events.location}</p>
             <p><strong>Cupos:</strong> ${events.people}</p>
+            <br>
+            <button class="btn-delete">Eliminar</button>
             <hr>
         `
         $taskList.appendChild(eventElement)
@@ -122,5 +124,24 @@ export function createEVents() {
             console.error("Error al obtener eventos:", error)
         }
     }
-}
 
+    document.getElementById("task-list").addEventListener("click", async function (e) {
+        if (e.target.classList.contains("btn-delete")) {
+            const eventId = e.target.dataset.id
+
+            try {
+                const response = await fetch(`${urlApi}/${eventId}`, {
+                    method: 'DELETE'
+                })
+
+                if (!response.ok) {
+                    throw new Error("Error al eliminar en la base de datos")
+                }
+
+                e.target.parentElement.remove()
+            } catch (error) {
+                console.error("Error al eliminar el evento:", error)
+            }
+        }
+    })
+}

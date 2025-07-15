@@ -1,4 +1,3 @@
-
 import { error404 } from "./views/404";
 import { createEVents, renderDashboardA, } from "./views/dashboardA";
 import { renderDashboardC, showEvents } from "./views/dashboardC";
@@ -44,6 +43,3 @@ export function router() {
     });
     render(location.pathname);
 }
-
-
-

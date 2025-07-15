@@ -27,25 +27,11 @@
   ],
   "events": [
     {
-      "id": "aa31",
+      "id": "86a2",
       "name": "mundial de futbol",
       "day": "febrero",
       "location": "maracana",
-      "people": "222"
-    },
-    {
-      "id": "e1b2",
-      "name": "mundial de futbol",
-      "day": "febrero",
-      "location": "maracana",
-      "people": "2222"
-    },
-    {
-      "id": "6809",
-      "name": "mundial de futbol2",
-      "day": "febrero",
-      "location": "222",
-      "people": "222"
+      "people": "122222"
     }
   ]
 }
