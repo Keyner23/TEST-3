@@ -1,3 +1,5 @@
+// WE HANDLE THE ALERTS
+
 import Swal from "sweetalert2";
 
 Swal

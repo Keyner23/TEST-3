@@ -5,6 +5,7 @@ import { renderHome } from "./views/home";
 import { loginValidation, renderLogin } from "./views/login";
 import { register, renderRegister } from "./views/register";
 
+// OBJECT WITH FILE PATHS
 const routes = {
     "/": renderHome(),
     "/login": renderLogin(),
@@ -12,12 +13,12 @@ const routes = {
     "/dashboardA": renderDashboardA(),
     "/dashboardC": renderDashboardC()
 }
-
+// HERE THE VIEWS ARE RENDERED FROM THE JS
 function render(path) {
     const view = document.getElementById("view");
     const route = routes[path] || error404();
     view.innerHTML = route;
-
+    // WE CALL THE LOGIC OF VISITS WITH ITS FUNCTIONALITY
     if (path === "/login") {
         loginValidation()
     }
@@ -31,7 +32,7 @@ function render(path) {
         showEvents()
     }
 }
-
+// THIS IS THE ROUTER THAT WILL VALIDATE IF THE ROUTE EXISTS OR NOT
 export function router() {
     document.body.addEventListener("click", (event) => {
         if (event.target.matches("[data-link]")) {

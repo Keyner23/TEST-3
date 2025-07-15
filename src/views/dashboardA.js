@@ -1,5 +1,4 @@
-import { checkSessionFourAuth } from "../js/validation"
-
+// HTML STRUCTURE
 export function renderDashboardA() {
     return `
     <head>
@@ -41,7 +40,7 @@ export function renderDashboardA() {
     `}
 
 
-
+    // LOGIN VIEW
 export function createEVents() {
 
     const $btnSubmit = document.getElementById("btn-submit")
@@ -68,7 +67,7 @@ export function createEVents() {
         event.preventDefault()
         getEvents()
     })
-
+    // FUNCTION TO ADD EVENTS TO THE JSON-SERVER
     async function newEvents() {
         const newEvent = {
             name: $name.value,
@@ -88,6 +87,7 @@ export function createEVents() {
             throw new Error("error en la peticion POST")
         }
     }
+    // FUNCTION TO RENDER EVENTS ON THE PAGE
     function renderEvent(events) {
         const $taskList = document.getElementById("task-list")
 
@@ -111,7 +111,7 @@ export function createEVents() {
         $location.value = ""
         $people.value = ""
     }
-
+    // FUNCTION TO BRING CREATED EVENTS
     async function getEvents() {
         try {
             const response = await fetch(urlApi)
@@ -125,7 +125,7 @@ export function createEVents() {
             console.error("Error al obtener eventos:", error)
         }
     }
-
+    // FUNCTION TO DELETE EVENTS
     document.getElementById("task-list").addEventListener("click", async function (e) {
         if (e.target.classList.contains("btn-delete")) {
             const eventId = e.target.dataset.id

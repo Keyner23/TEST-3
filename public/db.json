@@ -16,15 +16,14 @@
       "email": "keyner@gmail.com",
       "password": "1234",
       "roleId": "2"
+    },
+    {
+      "id": "1c0c",
+      "name": "juan",
+      "email": "juan@gmail.com",
+      "password": "2222",
+      "roleId": "1"
     }
   ],
-  "events": [
-    {
-      "id": "86a2",
-      "name": "mundial de futbol",
-      "day": "febrero",
-      "location": "maracana",
-      "people": "122222"
-    }
-  ]
+  "events": []
 }

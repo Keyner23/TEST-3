@@ -25,7 +25,7 @@ export function renderLogin() {
     `;
 }
 
-
+// VIEW OF REGISTERED LOGINS ALONG WITH THEIR VALIDATION
 export function loginValidation() {
     const $email = document.getElementById("email");
     const $password = document.getElementById("password");
@@ -44,6 +44,7 @@ export function loginValidation() {
 
             if (data[0].password === $password.value) {
                 localStorage.setItem("currentUser", JSON.stringify(data[0]));
+                // IF YOU ARE AN ADMIN, IT DIRECTS YOU TO THE ADMIN DASHBOARD
                 if (data[0].roleId === "2") {
                     window.location.href = "/dashboardA";
                 } else if (data[0].roleId === "1") {

@@ -1,3 +1,4 @@
+// FUNCTION TO RENDER HTML CLIENT STRUCTURE
 export function renderDashboardC() {
     return `
     <head>
@@ -27,7 +28,7 @@ export function renderDashboardC() {
     </body>
     `}
 
-
+    // FUNCTION TO RENDER EVENTS
 export function showEvents() {
     const $btnEvent = document.getElementById("btn-event")
     const urlApi = "http://localhost:3000/events"
@@ -56,7 +57,7 @@ export function showEvents() {
         `
         $taskList.appendChild(eventElement)
     }
-
+    // FUNCTION TO BRING ALL EVENTS
     async function getEvents() {
         try {
             const response = await fetch(urlApi)

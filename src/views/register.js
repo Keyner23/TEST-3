@@ -23,7 +23,7 @@ export function renderRegister() {
     `;
 }
 
-
+// THIS IS THE USER REGISTRATION VIEW
 export function register() {
     const $name = document.getElementById("name")
     const $email = document.getElementById("email")
@@ -39,6 +39,7 @@ export function register() {
 
     async function registerUser() {
         try {
+            // WE USE THE POST METHOD TO ENTER THE NEW USER
             const newUser = {
                 name: $name.value,
                 email: $email.value,
@@ -50,6 +51,7 @@ export function register() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newUser)
             })
+            // IF IT COULD BE CREATED CORRECTLY IT WILL BE SENT TO THE LOGIN
             if (responsive.status == 201) {
                 window.location.href = "/login"
             } else {
